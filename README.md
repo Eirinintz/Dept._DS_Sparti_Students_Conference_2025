@@ -2,6 +2,12 @@
 
 ### *Welcome* to Dept._DS_Sparti_Students_Conference_2025 📜🎓
 
+📌 This project was developed as part of my undergraduate thesis at [University Name].
+It was presented at the [Conference Name], [Location], in [Month Year].
+The work focuses on [brief description of topic], showcasing [main achievement or innovation].
+
+---
+
 There are three different codes in this repository:
 1) API_Conf_DS_2025.py, which has as a prompt TXT 
 2) API_PDF.py, which has as a prompt PDF
