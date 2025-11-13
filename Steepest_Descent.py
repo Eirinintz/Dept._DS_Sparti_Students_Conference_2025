@@ -178,26 +178,26 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
     # The final values ​​of the parameters, the final value of the function, a success message & success status (True), the path of the values ​​x, y, f(x,y) and the total number of iterations
     return x0, y0, f_num(x0, y0), criterion, True, x_path, y_path, z_path, tries
 
-# Χρήση της κύριας συνάρτησης main(), η οποία εκτελεί όλο το πρόγραμμα. Είναι υπέυθυνη για την εκτέλεση του βασικού προγράμματος
-def main(): # Η συνάρτηση main()
-    x0, y0 = Initial_Point() # Ζητά από τον χρήστη τα αρχικά σημεία (x0, y0), καλώντας την συνάρτηση Initial_Point()
-    a, c1, c2, c3 = Parameters() # Ζητά από τον χρήστη τον ρυθμό εκμάθησης και τις σταθερές τερματισμού κριτηρίων (a, c1, c2, c3) καλώντας την συνάρτηση Parameters()
+# Using the main function main(), which executes the entire program. It is responsible for executing the main program
+def main(): # The function main()
+    x0, y0 = Initial_Point() # Asks the user for the starting points (x0, y0), calling the function Initial_Point()
+    a, c1, c2, c3 = Parameters() # It asks the user for the learning rate and the criterion termination constants (a, c1, c2, c3) by calling the Parameters() function
 
-    f_sym = f() # Καλεί την συνάρτηση f(), η οποία ορίζει την συμβολική συνάρτηση που θέλουμε να βελτιστοποιήσουμε
-    x, y = sp.symbols('x y') # Δημιουργεί τις συμβολικές μεταβλητές x, y με την βιβλιοθήκη Sympy
+    f_sym = f() # Calls the function f(), which defines the symbolic function we want to optimize
+    x, y = sp.symbols('x y') # Creates the symbolic variables x, y with the Sympy library
 
-    # Μετατροπή της συνάρτησης από συμβολική σε αριθμητική συνάρτηση που μπορεί να υπολογίζει τις τιμές των x, y
+    # Converting the function from symbolic to numerical function that can calculate the values ​​of x, y
     f_num = sp.lambdify((x, y), f_sym, "numpy")
 
-    derivative_x_sym = sp.diff(f_sym, x) # Υπολογισμός μερικής παραγώγου της συνάρτησης f(x,y) ως προς x χρησιμοποιώντας την Sympy
-    derivative_y_sym = sp.diff(f_sym, y) # Υπολογισμός μερικής παραγώγου της συνάρτησης f(x,y) ως προς y χρησιμοποιώντας την Sympy
-
-    # Αποθήκευση αποτελεσμάτων μετά την εκτέλεση του κώδικα
+    derivative_x_sym = sp.diff(f_sym, x) # Calculating the partial derivative of the function f(x,y) with respect to x using Sympy
+    derivative_y_sym = sp.diff(f_sym, y) # Calculating the partial derivative of the function f(x,y) with respect to y using Sympy
+    
+    # Saving results after running the code
     min_x, min_y, min_value, criterion, show_plots, x_path, y_path, z_path, total_tries = steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x_sym, derivative_y_sym)
 
-    # Στην περίπτωση που ο μέγιστος αριθμός επαναλήψεων ξεπεραστεί, τότε δεν εμφανίζονται τα γραφήματα
+    # If the maximum number of repetitions is exceeded, then the graphs are not displayed
     if not show_plots:
-        print("Ο μέγιστος αριθμός επαναλήψεων ξεπεράστηκε.") # Εμφανίζεται το συγκεκριμένο μήνυμα ενημερώνοντας τον χρήστη
+        print("The maximum number of repetitions was exceeded.") # This specific message appears informing the user
         return
 
     # Ο αλγόριθμος θα διαβάσει τις παρακάτω εντολές, σε περίπτωση που έχω:
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
