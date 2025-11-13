@@ -21,7 +21,7 @@ except FileNotFoundError:
 prompt = f"""
 Write 10 multiple choice questions on Artificial Intelligence and steepest descent according to the text below. Each question should have 5 possible answers and only one of them should be correct. The audience answering the questions is at the university level.The questions and answers must be in Greek. The difficulty level of each question is on a Likert scale of 1 to 5 (1 = very easy and 5 = very difficult).Of the 10 questions, one should have difficulty level 1, two should have difficulty level 2, three should have difficulty level 3, two should have difficulty level 4, and the rest should have difficulty level 5.
 
-Κείμενο:
+Text:
 {pdf_text[:3000]}
 """
 
@@ -42,5 +42,6 @@ with open("output.txt", "w", encoding="utf-8") as output_file:
     output_file.write(output_message)
 
 print("Οι ερωτήσεις αποθηκεύτηκαν στο αρχείο 'output.txt'")
+
 
 
