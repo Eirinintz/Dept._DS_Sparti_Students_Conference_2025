@@ -71,28 +71,28 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
     # x, y: symbols returns two symbolic variables which it assigns to x, y
     # Thus, it has two variables which can be used in derivation, solving equations, etc
 
-    x_path = [x0] # x_path: Λίστα που αποθηκεύει την τιμή του x κατά την πορεία του αλγορίθμου, ώστε να μπορεί να γίνει απεικόνιση
-    y_path = [y0] # y_path: Λίστα που αποθηκεύει την τιμή του y κατά την πορεία του αλγορίθμου, ώστε να μπορεί να γίνει απεικόνιση
-    z_path = [f_num(x0, y0)] # z_path: Λίστα που αποθηκεύει την τιμή του f(x, y) κατά την πορεία του αλγορίθμου, ώστε να μπορεί να γίνει απεικόνιση
+    x_path = [x0] # x_path: List that stores the value of x during the algorithm, so that it can be visualized
+    y_path = [y0] # y_path: List that stores the value of y during the course of the algorithm, so that it can be visualized
+    z_path = [f_num(x0, y0)] # z_path: List that stores the value of f(x, y) during the course of the algorithm, so that it can be visualized
 
-    slope_x = derivative_x.subs({x: x0, y: y0}).evalf() # Υπολογίζεται η τιμή της παραγώγου στο σημείο (x0, y0), μετατρέπεται το αποτέλεσμα σε αριθμητική τιμή και αποθηκεύεται στην μεταβλητή slope_x
-    # derivative_x: Η μερική παράγωγος της συνάρτησης ως προς την μεταβλητή x
-    # .subs({x: x0, y: y0}): Μέθοδος η οποία χρησιμοποιείται για να αντικαταστήσει τις μεταβλητές x, y με τις τιμές x0, y0 αντίστοιχα
-    # .evalf(): Μέθοδος η οποία μετατρέπει την συμβολική έκφραση σε αριθμητική τιμή και την επιστρέφει
+    slope_x = derivative_x.subs({x: x0, y: y0}).evalf() # The derivative value at the point (x0, y0) is calculated, the result is converted to a numerical value and stored in the variable slope_x
+    # derivative_x: The partial derivative of the function with respect to the variable x
+    # .subs({x: x0, y: y0}): Method used to replace variables x, y with the values ​​x0, y0 respectively
+    # .evalf(): Method that converts the symbolic expression into a numeric value and returns it
+    
+    slope_y = derivative_y.subs({x: x0, y: y0}).evalf() # In the same way here
 
-    slope_y = derivative_y.subs({x: x0, y: y0}).evalf() # Κατά τον ίδιο τρόπο κι εδώ
+    grad_norm = sp.sqrt(slope_x**2 + slope_y**2) # The degree measure is calculated, which shows how quickly the function changes at the point we are examining
+    # grad_norm: Calculating the norm of the gradient vector (gradient norm)
+    # If it is zero, it means that the function is already at a local minimum or maximum.
+    # sp.sqrt: Calculating the square root of the sum of the squares of the derivatives
 
-    grad_norm = sp.sqrt(slope_x**2 + slope_y**2) # Υπολογίζεται το μέτρο του βαθμωτού το οποίο δείχνει πόσο γρήγορα αλλάζει η συνάρτηση στο σημείο που εξετάζουμε
-    # grad_norm: Υπολογισμός του μέτρου (norm) του διανύσματος της κλίσης (gradient norm)
-    # Αν είναι μηδέν, σημαίνει ότι η συνάρτηση είναι ήδη σε ένα τοπικό ελάχιστο ή μέγιστο
-    # sp.sqrt: Υπολογισμός της τετραγωνικής ρίζας του αθροίσματος των τετραγώνων των παραγώγων
-
-    slope_x_expr = derivative_x # Η τιμή της μερικής παραγώγου ως προς x, αποδίδεται στην μεταβλητή slope_x_expr
-    slope_y_expr = derivative_y # Η τιμή της μερικής παραγώγου ως προς y, αποδίδεται στην μεταβλητή slope_y_expr
-    slope_x = slope_x_expr.subs({x: x0, y: y0}).evalf() # Αντικατάσταση των x,y από τα x0,y0 & υπολογισμός της αριθμητικής τιμής της μερικής παραγώγου ως προς x στο σημείο (x0, y0)
-    slope_y = slope_y_expr.subs({x: x0, y: y0}).evalf() # Αντικατάσταση των x,y από τα x0,y0 & υπολογισμός της αριθμητικής τιμής της μερικής παραγώγου ως προς y στο σημείο (x0, y0)
-    print("Η μερική παράγωγος ως προς x:", slope_x_expr) # Εμφάνιση της μερικής παραγώγου ως προς x
-    print("Η μερική παράγωγος ως προς y:", slope_y_expr) # Εμφάνιση της μερικής παραγώγου ως προς y
+    slope_x_expr = derivative_x # The value of the partial derivative with respect to x is assigned to the variable slope_x_expr
+    slope_y_expr = derivative_y # The value of the partial derivative with respect to y is assigned to the variable slope_y_expr
+    slope_x = slope_x_expr.subs({x: x0, y: y0}).evalf() # Replacing x,y by x0,y0 & calculating the numerical value of the partial derivative with respect to x at the point (x0, y0)
+    slope_y = slope_y_expr.subs({x: x0, y: y0}).evalf() # Substituting x,y by x0,y0 & calculating the numerical value of the partial derivative with respect to y at the point (x0, y0)
+    print("The partial derivative with respect to x:", slope_x_expr) # Display the partial derivative with respect to x
+    print("The partial derivative with respect to y:", slope_y_expr) # Display the partial derivative with respect to y
 
     # Σε περίπτωση που η κλίση είναι 0, ζητάμε από τον χρήστη να δώσει νέο x0 και y0
     while grad_norm == 0:
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
