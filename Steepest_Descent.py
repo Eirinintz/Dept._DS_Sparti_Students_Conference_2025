@@ -1,23 +1,23 @@
-# Ο κώδικας υλοποιεί τον Αλγόριθμο της Steepest Descent για την εύρεση του ελαχίστου μιας συνάρτησης δύο μεταβλητών
-# Ο χρήστης εισάγει τα αρχικά σημεία, τις παραμέτρους και την συνάρτηση που θα ήθελε να εξετάσει
-# Ο αλγόριθμος υπολογίζει τις παραγώγους και την κλίση της συνάρτησης, ενημερώνοντας τα σημεία σε κάθε βήμα
-# Η διαδικασία τερματίζεται:
-# 1) όταν ικανοποιηθεί ένα από τα κριτήρια τερματισμού (προτού ξεπεραστεί ο μέγιστος αριθμός επαναλήψεων) και έτσι εμφανίζονται τα αποτελέσματα και τα γραφήματα (σε τρισδιάστατη και δισδιάστατη μορφή) που δείχνουν την πορεία του αλγορίθμου
-# 2) όταν ξεπεραστεί ο μέγιστος αριθμός επαναλήψεων ενημερώνοντας τον χρήστη πως ο αριθμός των επαναλήψεων ξεπεράστηκε χωρίς να εμφανιστούν οι γραφικές παραστάσεις
+# The code implements the Steepest Descent Algorithm for finding the minimum of a function of two variables.
+# The user enters the initial points, parameters and the function they would like to examine.
+# The algorithm calculates the derivatives and slope of the function, updating the points at each step.
+# The process is terminated:
+# 1) when one of the termination criteria is met (before the maximum number of iterations is exceeded) and thus the results and graphs (in three-dimensional and two-dimensional form) showing the progress of the algorithm are displayed
+# 2) when the maximum number of iterations is exceeded, informing the user that the number of iterations has been exceeded without displaying the graphs
 
-# Οι βιβλιοθήκες που χρησιμοποιούνται για την εκτέλεση του αλγορίθμου
-import sympy as sp # Υπολογισμός συμβολικών πράξεων (π.χ. για εξισώσεις, για παραγώγους)
-import numpy as np # Εκτέλεση μαθηματικών πράξεων
-import matplotlib.pyplot as plt # Χρησιμοποιείται για την δημιουργία γραφημάτων και την απεικόνιση των αποτελεσμάτων
+# The libraries used to execute the algorithm
+import sympy as sp # Calculation of symbolic operations (e.g. for equations, for derivatives)
+import numpy as np # Performing mathematical operations
+import matplotlib.pyplot as plt # Used to create graphs and visualize results
 
-# Χρήση της συνάρτησης Initial_Point() για την είσοδο των αρχικών σημείων (x0,y0) από το χρήστη
-def Initial_Point(): # Η συνάρτηση Initial_Point()
-    while True: # Σε περίπτωση που ο χρήστης εισάγει μία τιμή που δεν είναι αριθμητική, ζητείται ξανά η είσοδος του σημείου, ενημερώνοντας τον χρήστη με αντίστοιχο μήνυμα
-        try: # Θα εμφανιστεί στην οθόνη στην περίπτωση που ο χρήστης εισάγει αριθμητική τιμή
-            print("Αρχικά σημεία & Ρυθμός εκμάθησης:") # Το μήνυμα εμφανίζεται αρχικά στην οθόνη του χρήστη
-            x0 = float(input("Το x0 είναι το αρχικό σημείο. Παρακαλώ εισάγετε το x0: ")) # Είσοδος του σημείου x0 από τον χρήστη
-            y0 = float(input("Το y0 είναι το αρχικό σημείο. Παρακαλώ εισάγετε το y0: ")) # Είσοδος του σημείου y0 από τον χρήστη
-            return x0, y0 # Επιστρέφει τα x0, y0
+# Using the Initial_Point() function to input the initial points (x0,y0) from the user
+def Initial_Point(): # The function Initial_Point()
+    while True: # If the user enters a non-numeric value, the user is prompted to enter the point again, informing the user with a corresponding message.
+        try: # It will appear on the screen if the user enters a numeric value.
+            print("Starting Points & Learning Rate:") # The message initially appears on the user's screen
+            x0 = float(input("x0 is the initial point. Please enter x0: ")) # User input of point x0
+            y0 = float(input("y0 is the initial point.Please enter y0: ")) # User input of point y0
+            return x0, y0 # Returns the x0, y0
 
         except ValueError: # Θα εμφανιστεί στην οθόνη στην περίπτωση που ο χρήστης εισάγει λανθασμένη είσοδο, δηλαδή μία μη αριθμητική τιμή
             print("Λάθος είσοδος! Παρακαλώ εισάγετε έγκυρους αριθμούς για x0 και y0.") # Για την προκειμένη περίπτωση, εμφανίζεται αντίστοιχο μήνυμα, ενημερώνοντας τον χρήστη και ζητώντας ξανά την είσοδο του σημείου που πληκτρολόγησε λάθος (χρήση της while True)
@@ -272,4 +272,5 @@ def main(): # Η συνάρτηση main()
     plt.show()
 
 # Ολοκλήρωση της main
+
 main()
