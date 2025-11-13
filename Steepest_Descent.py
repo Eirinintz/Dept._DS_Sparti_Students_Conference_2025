@@ -200,38 +200,38 @@ def main(): # The function main()
         print("The maximum number of repetitions was exceeded.") # This specific message appears informing the user
         return
 
-    # Ο αλγόριθμος θα διαβάσει τις παρακάτω εντολές, σε περίπτωση που έχω:
+    # The algorithm will read the following commands, in case I have:
     print("-------------------------------------------------------------------------------------")
-    print(f"Ελάχιστο σημείο: ({min_x}, {min_y}), με τιμή συνάρτησης f(x, y) = {min_value}") # 1) τις τιμές του ελάχιστου σημείου, 2) της τιμής της συνάρτησης,
-    print("Κριτήριο σύγκλισης ->", criterion) # 3) το κριτήριο που ικανοποιήθηκε
-    print(f"Αριθμός επαναλήψεων: {total_tries}") # 4) τον αριθμό των επαναλήψεων
+    print(f"Minimum point: ({min_x}, {min_y}), with function value f(x, y) = {min_value}") # 1) the values ​​of the minimum point, 2) the value of the function
+    print("Convergence criterion ->", criterion) # 3) the criterion that was satisfied
+    print(f"Number of repetitions: {total_tries}") # 4) the number of repetitions
 
-    # Αν τα παραπάνω αποτελέσματα είναι έγκυρα, τότε δημιουργούνται 3D και 2D γραφήματα τα οποία απεικονίζουν την πορεία του αλγορίθμου
-    x_vals = np.linspace(-1.5, 1.5, 400) # Αφορά τις 400 ενδιάμεσες τιμές από -1.5 έως 1.5 για τον άξονα x
-    y_vals = np.linspace(-1.5, 1.5, 400) # Αφορά τις 400 ενδιαμεσες τιμές από -1.5 έως 1.5 για τον άξονα y
-    X, Y = np.meshgrid(x_vals, y_vals) # Δημιουργία πινάκων X (περιέχει όλες τις συντεταγμένες του άξονα x) και Y (περιέχει όλες τις συντεταγμένες του άξονα y)
-    Z = f_num(X, Y) # Υπολογίζεται η τιμή της συνάρτησης f_num για κάθε ζεύγος (X,Y). Άρα, το Z αντιπροσωπεύει το ύψος του γραφήματος
-    fig = plt.figure(figsize=(14, 6)) # Δημιουργία σχήματος με διαστάσεις: 14 ίντσες πλάτος και 6 ίντσες ύψος
-    # figsize: Μέγεθος παραθύρου ώστε το γράφημα να είναι μεγάλο
-
-    # 3D Plot (3 διαστάσεις: X, Y, Z)
+    # If the above results are valid, then 3D and 2D graphs are created which illustrate the progress of the algorithm
+    x_vals = np.linspace(-1.5, 1.5, 400) # It concerns the 400 intermediate values ​​from -1.5 to 1.5 for the x-axis
+    y_vals = np.linspace(-1.5, 1.5, 400) # It concerns the 400 intermediate values ​​from -1.5 to 1.5 for the y-axis
+    X, Y = np.meshgrid(x_vals, y_vals) # Create X (contains all x-axis coordinates) and Y (contains all y-axis coordinates) tables
+    Z = f_num(X, Y) # The value of the function f_num is calculated for each pair (X,Y). So, Z represents the height of the graph
+    fig = plt.figure(figsize=(14, 6)) # Create a shape with dimensions: 14 inches wide and 6 inches high
+    # figsize: Window size so the chart is large
+    
+    # 3D Plot (3 dimensions: X, Y, Z)
     ax1 = fig.add_subplot(121, projection='3d')
-    # Δημιουργία ενός υπογράφου στον πρώτο χώρο με διάταξη 1x2 (μία γραμμή και δύο στήλες), ο οποίος να έχει τρισδιάστατη μορφή (projection='3d')
+    # Creating a subgraph in the first space with a 1x2 layout (one row and two columns), which has a three-dimensional form (projection='3d')
 
-    ax1.plot_surface(X, Y, Z, alpha=0.3, cmap='viridis') # Δημιουργία επιφάνειας
-    # alpha=0.3: Δημιουργία ημιδιαφανούς επιφάνειας ώστε να διακρίνονται τα στοιχεία από κάτω
-    # cmap='viridis': Αφορά τα χρώματα που θα απεικονίσουν την επιφάνεια (στυλ "viridis")
+    ax1.plot_surface(X, Y, Z, alpha=0.3, cmap='viridis') # Creating a surface
+    # alpha=0.3: Creating a translucent surface to see the elements underneath
+    # cmap='viridis': It concerns the colors that will depict the surface ("viridis" style)
 
-    ax1.plot(x_path, y_path, z_path, 'r-', label='Steepest Descent Path') # Η συνάρτηση αυτή σχεδιάζει την πορεία του αλγορίθμου της Steepest Descent
-    # x_path, y_path, z_path: Λίστες που περιέχουν τις συντεταγμένες της πορείας του αλγορίθμου
-    # r-: Ορίζει το χρώμα και τον τύπο της γραμμής (r: κόκκινο, -: συνεχής)
-    # label='Steepest Descent Path': Ορίζει την ετικέτα
+    ax1.plot(x_path, y_path, z_path, 'r-', label='Steepest Descent Path') # This function plots the path of the Steepest Descent algorithm
+    # x_path, y_path, z_path: Lists containing the coordinates of the algorithm's path
+    # r-: Sets the color and type of the line (r: red, -: solid)
+    # label='Steepest Descent Path': Sets the label
 
-    ax1.scatter(min_x, min_y, min_value, color='red', s=100, label='Ελάχιστο Σημείο') # Τοποθέτηση του ελαχίστου
-    # min_x, min_y, min_value: Περιέχουν τις συντεταγμένες του ελαχίστου
-    # color='red': Ορίζει το χρώμα του ελαχίστου
-    # s=100: Μέγεθος ελαχίστου (κουκίδας)
-    # label='Ελάχιστο Σημείο': Ορίζει την ετικέτα
+    ax1.scatter(min_x, min_y, min_value, color='red', s=100, label='Ελάχιστο Σημείο') # Placing the minimum
+    # min_x, min_y, min_value: They contain the coordinates of the minimum
+    # color='red': Sets the color of the minimum
+    # s=100: Minimum (dot) size
+    # label='Minimum Point': Sets the label
 
     # Ορίζει τις ετικέτες για τους άξονες x, y, z
     ax1.set_xlabel('$x$')
@@ -274,6 +274,7 @@ def main(): # The function main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
