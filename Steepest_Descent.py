@@ -94,33 +94,33 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
     print("The partial derivative with respect to x:", slope_x_expr) # Display the partial derivative with respect to x
     print("The partial derivative with respect to y:", slope_y_expr) # Display the partial derivative with respect to y
 
-    # Σε περίπτωση που η κλίση είναι 0, ζητάμε από τον χρήστη να δώσει νέο x0 και y0
+    # In case the slope is 0, we ask the user to give new x0 and y0
     while grad_norm == 0:
-        print("Η κλίση στο σημείο (x0, y0) είναι 0. Παρακαλώ εισάγετε νέο σημείο εκκίνησης.")
-        x0, y0 = Initial_Point() # Ο χρήστης δίνει ξανά τα νέα σημεία
+        print("The slope at point (x0, y0) is 0. Please enter a new starting point.")
+        x0, y0 = Initial_Point() # The user gives the new points again
 
-        # Υπολογίζουμε ξανά τις παραγώγους και την κλίση στο νέο σημείο
+        # We recalculate the derivatives and the slope at the new point
         slope_x = derivative_x.subs({x: x0, y: y0}).evalf()
         slope_y = derivative_y.subs({x: x0, y: y0}).evalf()
         grad_norm = sp.sqrt(slope_x**2 + slope_y**2)
 
-    # Όσο ο αλγόριθμος επαναλαμβάνει την διαδικασία και τερματίζεται μέχρι και τις 1000 επαναλήψεις
+    # As the algorithm repeats the process and terminates after 1000 iterations
     while tries <= MAX_TRIES:
-        # Υπολογισμός των παραγώγων και της κλίσης
+        # Calculating derivatives and gradients
         slope_x = derivative_x.subs({x: x0, y: y0}).evalf()
         slope_y = derivative_y.subs({x: x0, y: y0}).evalf()
         grad_norm = sp.sqrt(slope_x**2 + slope_y**2)
 
-        # Προσθήκη του σημείου με συντεταγμένες (x0,y0) στην λίστα points με χρήση της μεθόδου append
+        # Adding the point with coordinates (x0,y0) to the points list using the append method
         points.append((x0, y0))
 
-        # ΚΡΙΤΗΡΙΑ ΤΕΡΜΑΤΙΣΜΟΥ
-        # Κριτήριο 1 -> Έλεγχος αν η κλίση είναι μικρότερη από την σταθερά c1:
-        # Αν είναι, διακόπτεται η διαδικασία και καταγράφεται το αποτέλεσμα στο criterion
-        # Αν δεν είναι, ελέγχει αν υπάρχουν τουλάχιστον δύο σημεία στην λίστα points. Αν υπάρχουν, υπολογίζει την απόσταση του τελευταίου και του προτελευταίου σημείου, με βάση τον τύπο της ευκλείδιας απόστασης
-        if grad_norm < c1: # grad_norm: η τιμή της κλίσης. Αν η τιμή της κλίσης είναι μικρότερη από την σταθερά c1 που έχει οριστεί παραπάνω, τότε ο αλγόριθμος προχωρά στις επόμενες εντολές αφού ικανοποιείται το 1ο κριτήριο
-            criterion = "1ο κριτήριο: Η κλίση είναι μικρή." # Αν η παραπάνω συνθήκη είναι αληθής, τότε στη μεταβλητή criterion, ανατίθεται η τιμή "1ο κριτήριο: Η κλίση είναι μικρή.", με την οποία αναγνωρίζεται πως το 1ο κριτήριο έχει ικανοποιηθεί
-            break # Αν ισχύουν τα παραπάνω, τότε σταματά η εκτέλεση του βρόχου και η διαδικασία ολοκληρώνεται
+        # TERMINATION CRITERIA
+        # Criterion 1 -> Check if the slope is less than the constant c1:
+        # If it is, the process is stopped and the result is recorded in the criterion
+        # If not, it checks if there are at least two points in the points list. If there are, it calculates the distance of the last and penultimate point, based on the Euclidean distance formula.
+        if grad_norm < c1: # grad_norm: the value of the slope. If the value of the slope is less than the constant c1 defined above, then the algorithm proceeds to the next instructions after the 1st criterion is satisfied
+            criterion = "1st criterion: The slope is small." # If the above condition is true, then the variable criterion is assigned the value "1st criterion: The slope is small.", which recognizes that the 1st criterion has been satisfied
+            break # If the above is true, then the loop execution stops and the process is completed
 
         elif len(points) > 1: # Αν το πρώτο κριτήριο δεν ικανοποιείται, εξετάζεται η περίπτωση η τιμή της κλίσης να είναι μεγαλύτερη από την σταθερά c1
             prev_x, prev_y = points[-2] # points[-2]: Αναφέρεται στο δεύτερο από το τέλος στοιχείο της λίστας points
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
