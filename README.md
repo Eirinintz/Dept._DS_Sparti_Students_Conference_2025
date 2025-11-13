@@ -7,6 +7,8 @@ There are three different codes in this repository:
 2) API_PDF.py, which has as a prompt PDF
 3) Steepest_Descent.py, where it describes the Steepest Descent Method in detail with comments 
 
+---
+
 In the **first** code, the following happens: ✅
 - The code first imports the openai library and creates a client object that connects to the OpenAI API, using the API key provided by the user.
 - It then attempts to open the file prompt.txt in read mode and read its contents. If the file does not exist, an error message is displayed and the program terminates.
