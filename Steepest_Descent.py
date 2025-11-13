@@ -61,15 +61,15 @@ def f(): # The function f()
         except sp.SympifyError: # It will appear on the screen in case the user enters an invalid function (e.g. 5x + 4y)
             print("Invalid input! Please enter a valid function.") # In this case, a corresponding message appears, informing the user and requesting the input of a valid function again
             
-# Υλοποίηση του αλγορίθμου της steepest_descent για την ελαχιστοποίηση μιας συνάρτησης δύο μεταβλητών
-def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): # f_num: Η συνάρτηση προς ελαχιστοποίηση - μετατροπή της συμβολικής συνάρτησης σε αριθμητική με χρήση του lambdify από την sympy
-    tries = 0 # tries: Αντιπροσωπεύει τον αριθμό των επαναλήψεων του αλγορίθμου, δηλαδή πόσες φορές ο αλγόριθμος θα επαναλάβει την διαδικασία για την συνάρτηση που έχει εισάγει ο χρήστης
-    MAX_TRIES = 1000 # MAX_TRIES: Ο μέγιστος αριθμός επαναλήψεων. Αν ο αλγόριθμος δεν συγκλίνει πριν φτάσει σε αυτόν τον αριθμό, τότε θα τερματιστεί
-    points = [] # points: Λίστα που αποθηκεύει τα σημεία που επισκέπτεται ο αλγόριθμος μέχρι να φτάσει στο τελικό σημείο ή το MAX_TRIES
-    x, y = sp.symbols('x y') # sp: Από την βιβλιοθήκη sympy
-    # symbols: Συνάρτηση της βιβλιοθήκης sympy, χρησιμοποιείται για την δημιουργία συμβολικών μεταβλητών, με τις μεταβλητές αυτές να μην είναι αριθμοί αλλά συμβολισμοί που χρησιμοποιούνται στις εξισώσεις
-    # x, y: Η symbols επιστρέφει δύο συμβολικές μεταβλητές τις οποίες αποδίσει στις x, y
-    # Έτσι, έχει δύο μεταβλητές οι οποίες μπορούν να χρησιμοποιηθούν στην παραγώγιση, στην επίλυση εξισώσεων κλπ
+# Implementation of the steepest_descent algorithm for minimizing a function of two variables
+def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): # f_num: The function to minimize - converting the symbolic function to arithmetic using lambdify from sympy
+    tries = 0 # tries: It represents the number of iterations of the algorithm, that is, how many times the algorithm will repeat the process for the function entered by the user
+    MAX_TRIES = 1000 # MAX_TRIES: The maximum number of iterations. If the algorithm does not converge before reaching this number, then it will terminate
+    points = [] # points: List that stores the points visited by the algorithm until it reaches the final point or MAX_TRIES
+    x, y = sp.symbols('x y') # sp: From the library sympy
+    # symbols: A function of the sympy library, used to create symbolic variables, where these variables are not numbers but symbols used in equations
+    # x, y: symbols returns two symbolic variables which it assigns to x, y
+    # Thus, it has two variables which can be used in derivation, solving equations, etc
 
     x_path = [x0] # x_path: Λίστα που αποθηκεύει την τιμή του x κατά την πορεία του αλγορίθμου, ώστε να μπορεί να γίνει απεικόνιση
     y_path = [y0] # y_path: Λίστα που αποθηκεύει την τιμή του y κατά την πορεία του αλγορίθμου, ώστε να μπορεί να γίνει απεικόνιση
@@ -274,5 +274,6 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
