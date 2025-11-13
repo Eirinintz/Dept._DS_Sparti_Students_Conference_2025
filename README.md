@@ -2,9 +2,8 @@
 
 ### *Welcome* to Dept._DS_Sparti_Students_Conference_2025 📜🎓
 
-📌 This project was developed as part of my undergraduate thesis at [University Name].
-It was presented at the [Conference Name], [Location], in [Month Year].
-The work focuses on [brief description of topic], showcasing [main achievement or innovation].
+📌 This project was developed as part of my undergraduate thesis at [University of Peloponnese].
+It was presented at the [Conference 2025], [Sparta], in [14/06/2025].
 
 ---
 
