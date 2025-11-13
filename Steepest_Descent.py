@@ -233,29 +233,29 @@ def main(): # The function main()
     # s=100: Minimum (dot) size
     # label='Minimum Point': Sets the label
 
-    # Ορίζει τις ετικέτες για τους άξονες x, y, z
+    # Sets the labels for the x, y, z axes
     ax1.set_xlabel('$x$')
     ax1.set_ylabel('$y$'),
     ax1.set_zlabel('$f(x, y)$')
 
-    # Προσθήκη λεζάντας για την εμφάνιση των labels που έχουμε καθορίσει για κάθε στοιχείο
+    # Add a caption to display the labels we have defined for each element
     ax1.legend()
 
 
-    # 2D Contour Plot (Ισοϋψεις Καμπύλες)
+    # 2D Contour Plot (Contours Curves)
     ax2 = fig.add_subplot(122)
-    # Δημιουργία ενός νέου υπογράφου στον δεύτερο χώρο με διάταξη 1x2 (μία γραμμή και δύο στήλες)
+    # Create a new subgraph in the second space with a 1x2 layout (one row and two columns)
 
-    ax2.contour(X, Y, Z, levels=50, cmap='viridis') # Σχεδίαση ισοϋψών καμπυλών
-    # levels=50: Ορίζει τον αριθμό των ισοϋψών καμπυλών που θα σχεδιαστούν
-    # cmap='viridis': Αφορά τα χρώματα που θα απεικονίσουν τις καμπύλες (στυλ "viridis")
+    ax2.contour(X, Y, Z, levels=50, cmap='viridis') # Drawing contour curves
+    # levels=50: Sets the number of contour lines to be drawn
+    # cmap='viridis': It concerns the colors that will depict the curves ("viridis" style)
 
-    ax2.plot(x_path, y_path, 'r-', label='Steepest Descent Path') # Η συνάρτηση αυτή σχεδιάζει την πορεία του αλγορίθμου της Steepest Descent
-    # x_path, y_path: Λίστες που περιέχουν τις συντεταγμένες της πορείας του αλγορίθμου
-    # r-: Ορίζει το χρώμα και τον τύπο της γραμμής (r: κόκκινο, -: συνεχής)
-    # label='Steepest Descent Path': Ορίζει την ετικέτα
+    ax2.plot(x_path, y_path, 'r-', label='Steepest Descent Path') # This function plots the path of the Steepest Descent algorithm
+    # x_path, y_path: Lists containing the coordinates of the algorithm's path
+    # r-: Sets the color and type of the line (r: red, -: solid)
+    # label='Steepest Descent Path': Sets the label
 
-    ax2.scatter(min_x, min_y, color='red', s=100, label='Ελάχιστο Σημείο') # Τοποθέτηση του ελαχίστου
+    ax2.scatter(min_x, min_y, color='red', s=100, label='Minimum Point') # Placing the minimum
     # min_x, min_y: Περιέχουν τις συντεταγμένες του ελαχίστου
     # color='red': Ορίζει το χρώμα του ελαχίστου
     # s=100: Μέγεθος ελαχίστου (κουκίδας)
@@ -274,6 +274,7 @@ def main(): # The function main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
