@@ -19,8 +19,7 @@ except FileNotFoundError:
     exit(1)
 
 prompt = f"""
-Γράψε 10 ερωτήσεις πολλαπλής επιλογής για την Τεχνητή Νοημοσύνη και steepest descent σύμφωνα με το κείμενο που ακολουθεί. Κάθε ερώτηση να έχει 5 πιθανές απαντήσεις και μόνο μια από αυτές να είναι σωστή. Το κοινό που απαντά στις ερωτήσεις είναι πανεπιστημιακού επιπέδου. Οι ερωτήσεις και οι απαντήσεις να είναι στα ελληνικά. Το επίπεδο δυσκολίας κάθε ερώτησης είναι σε κλίμακα Likert 1 ως 5 (1 = πολύ εύκολη και 5 = πολύ δύσκολη). Από τις 10 ερωτήσεις, η μια να έχει επίπεδο δυσκολίας 1, οι δυο να έχουν επίπεδο δυσκολίας 2, οι τρεις να έχουν επίπεδο δυσκολίας 3, οι δυο να έχουν επίπεδο δυσκολίας 4, και οι υπόλοιπες να έχουν επίπεδο δυσκολίας 5.
-
+Write 10 multiple choice questions on Artificial Intelligence and steepest descent according to the text below. Each question should have 5 possible answers and only one of them should be correct. The audience answering the questions is at the university level.The questions and answers must be in Greek. The difficulty level of each question is on a Likert scale of 1 to 5 (1 = very easy and 5 = very difficult).Of the 10 questions, one should have difficulty level 1, two should have difficulty level 2, three should have difficulty level 3, two should have difficulty level 4, and the rest should have difficulty level 5.
 
 Κείμενο:
 {pdf_text[:3000]}
@@ -43,4 +42,5 @@ with open("output.txt", "w", encoding="utf-8") as output_file:
     output_file.write(output_message)
 
 print("Οι ερωτήσεις αποθηκεύτηκαν στο αρχείο 'output.txt'")
+
 
