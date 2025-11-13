@@ -15,7 +15,7 @@ pdf_path = "document.pdf"
 try:
     pdf_text = extract_text_from_pdf(pdf_path)
 except FileNotFoundError:
-    print(f"Error: Το αρχείο PDF '{pdf_path}' δεν βρέθηκε.")
+    print(f"Error: The file PDF '{pdf_path}' not found.")
     exit(1)
 
 prompt = f"""
@@ -43,3 +43,4 @@ with open("output.txt", "w", encoding="utf-8") as output_file:
     output_file.write(output_message)
 
 print("Οι ερωτήσεις αποθηκεύτηκαν στο αρχείο 'output.txt'")
+
