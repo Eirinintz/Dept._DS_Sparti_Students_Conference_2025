@@ -22,5 +22,7 @@ In the **second** code, the following happens: ✅
 - Finally, it displays the message “The questions were saved to the file 'output.txt'” on the console, informing that the process was completed successfully and displaying these questions.
 
 In the **third** code, the following happens: ✅
--
--
+- The code implements the Steepest Descent algorithm to find the local minimum of a function of two variables. It first asks the user to provide the initial points (x0, y0), the function to minimize, the learning rate and the termination constants c1, c2, c3, which determine when the algorithm will stop: either when the slope of the function is too small, or when the distance or difference in function values ​​between two consecutive points is small, or if the maximum number of iterations is exceeded.
+- The algorithm then calculates the partial derivatives of the function and, iteratively, updates the points along the steepest descent direction using the learning rate, keeping a record of the visited points and the function values.
+- The process continues until one of the termination criteria is met or the maximum number of iterations is exceeded.
+- Finally, it displays the results, namely the minimum point, the corresponding value of the function, which termination criterion was satisfied and the number of iterations, while creating 3D surface and 2D contour plots that show the path of the algorithm towards the minimum point.
