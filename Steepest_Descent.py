@@ -122,25 +122,25 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
             criterion = "1st criterion: The slope is small." # If the above condition is true, then the variable criterion is assigned the value "1st criterion: The slope is small.", which recognizes that the 1st criterion has been satisfied
             break # If the above is true, then the loop execution stops and the process is completed
 
-        elif len(points) > 1: # Αν το πρώτο κριτήριο δεν ικανοποιείται, εξετάζεται η περίπτωση η τιμή της κλίσης να είναι μεγαλύτερη από την σταθερά c1
-            prev_x, prev_y = points[-2] # points[-2]: Αναφέρεται στο δεύτερο από το τέλος στοιχείο της λίστας points
-            # Επομένως, η εντολή "prev_x, prev_y = points[-2]" αναθέτει τις συντεταγμένες του προτελευταίου σημείου της λίστας στις μεταβλητές prev_x, prev_y
-            distance = sp.sqrt((x0 - prev_x)**2 + (y0 - prev_y)**2).evalf() # (x0 - prev_x)**2 + (y0 - prev_y)**2: Υπολογισμός του τετραγώνου της απόστασης μεταξύ δύο σημείων στον δισδιάστατο χώρο
-            # .evalf(): Υπολογίζει την αριθμητική τιμή του αποτελέσματος, μετατρέποντας την συμβολική έκφραση σε δεκαδικό αριθμό και αποθηκεύεται στην μεταβλητή distance
+        elif len(points) > 1: # If the first criterion is not satisfied, the case is considered where the slope value is greater than the constant c1
+            prev_x, prev_y = points[-2] # points[-2]: Refers to the second-to-last element of the points list
+            # Therefore, the command "prev_x, prev_y = points[-2]" assigns the coordinates of the penultimate point in the list to the variables prev_x, prev_y
+            distance = sp.sqrt((x0 - prev_x)**2 + (y0 - prev_y)**2).evalf() # (x0 - prev_x)**2 + (y0 - prev_y)**2: Calculating the square of the distance between two points in two-dimensional space
+            # .evalf(): Calculates the numerical value of the result, converting the symbolic expression to a decimal number and storing it in the distance variable
 
 
-            # Κριτήριο 2 -> Έλεγχος αν η απόσταση μεταξύ του τρέχοντος και του προτελευταίου σημείου είναι μικρότερη από την σταθερά c2:
-            # Αν είναι, διακόπτεται η διαδικασία και καταγράφεται το αποτέλεσμα στο criterion
-            # Αν δεν είναι, υπολογίζονται οι τιμές της συνάρτησης στο προτελευταίο και στο τρέχον σημείο και αποθηκεύονται στις μεταβλητές f_prev και f_current αντίστοιχα, προκειμένου να ολοκληρωθεί η διαδικασία της βελτιστοποίησης και να βρεθεί το ελάχιστο σημείο
-            if distance < c2: # distance: Η απόσταση, μάς δείχνει πόσο μακριά είναι τα δύο σημεία στον δισδιάστατο χώρο (έχει υπολογιστεί παραπάνω)
-            # Όταν η απόσταση δύο διαδοχικών σημείων είναι μικρότερη από την τιμή της σταθεράς c2 που έχει εισάγει ο χρήστης, τότε η συνθήκη είναι αληθής και τα σημεία είναι πολύ κοντά μεταξύ τους
-                criterion = "2ο κριτήριο: Η απόσταση μεταξύ δύο διαδοχικών σημείων είναι μικρή." # Η τιμή "2ο κριτήριο: Η απόσταση μεταξύ δύο διαδοχικών σημείων είναι μικρή.", ανατίθεται στην μεταβλητή criterion
-                break  # Αν ισχύουν τα παραπάνω, τότε σταματά η εκτέλεση του βρόχου και η διαδικασία ολοκληρώνεται
+            # Criterion 2 -> Check if the distance between the current and the penultimate point is less than the constant c2:
+            # If it is, the process is stopped and the result is recorded in the criterion
+            # If it is not, the values ​​of the function at the penultimate and current points are calculated and stored in the variables f_prev and f_current respectively, in order to complete the optimization process and find the minimum point.
+            if distance < c2: # distance: The distance shows us how far apart the two points are in two-dimensional space (it has been calculated above)
+            # When the distance between two consecutive points is less than the value of the constant c2 entered by the user, then the condition is true and the points are very close to each other
+                criterion = "2nd criterion: The distance between two consecutive points is small." # The value "2nd criterion: The distance between two consecutive points is small." is assigned to the variable criterion
+                break  # If the above is true, then the loop execution stops and the process is completed
 
-            f_prev = f_num(prev_x, prev_y) # Υπολογίζεται η τιμή της συνάρτησης f_num στο προτελευταίο σημείο (prev_x, prev_y), που είναι το προηγούμενο σημείο από το (x0, y0)
-            # Η τιμή της συνάρτησης στο προτελευταίο σημείο αποθηκεύεται στην μεταβλητή f_prev
-            f_current = f_num(x0, y0) # Υπολογίζεται η τιμή της συνάρτησης f_num στο τρέχον σημείο (x0, y0)
-            # Η τιμή της συνάρτησης στο τρέχον σημείο αποθηκεύεται στη μεταβλητή f_current
+            f_prev = f_num(prev_x, prev_y) # The value of the function f_num is calculated at the penultimate point (prev_x, prev_y), which is the previous point from (x0, y0)
+            # The value of the function at the penultimate point is stored in the variable f_prev
+            f_current = f_num(x0, y0) # The value of the function f_num is calculated at the current point (x0, y0)
+            # The value of the function at the current point is stored in the variable f_current
 
 
             # Κριτήριο 3 -> Σύγκλιση της διαφοράς τιμών της συνάρτησης. Ελέγχει αν η απόλυτη διαφορά μεταξύ των τιμών μιας συνάρτησης σε δύο διαδοχικά σημεία είναι μικρότερη από την σταθερά c3:
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
