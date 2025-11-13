@@ -256,24 +256,25 @@ def main(): # The function main()
     # label='Steepest Descent Path': Sets the label
 
     ax2.scatter(min_x, min_y, color='red', s=100, label='Minimum Point') # Placing the minimum
-    # min_x, min_y: Περιέχουν τις συντεταγμένες του ελαχίστου
-    # color='red': Ορίζει το χρώμα του ελαχίστου
-    # s=100: Μέγεθος ελαχίστου (κουκίδας)
-    # label='Ελάχιστο Σημείο': Ορίζει την ετικέτα
+    # min_x, min_y: They contain the coordinates of the minimum
+    # color='red': Sets the color of the minimum
+    # s=100: Minimum (dot) size
+    # label='Minimum Point': Sets the label
 
-    # Ορίζει τις ετικέτες για τους άξονες x, y
+    # Sets the labels for the x, y axes
     ax2.set_xlabel('$x$')
     ax2.set_ylabel('$y$')
 
-    # Προσθήκη λεζάντας για την εμφάνιση των labels που έχουμε καθορίσει για κάθε στοιχείο
+    # Add a caption to display the labels we have defined for each element
     ax2.legend()
 
-    # Εμφάνιση 3D και 2D γραφημάτων
+    # Display 3D and 2D graphs
     plt.show()
 
-# Ολοκλήρωση της main
+# Completion of main
 
 main()
+
 
 
 
