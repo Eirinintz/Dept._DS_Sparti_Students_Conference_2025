@@ -1,8 +1,8 @@
-# The code implements the Steepest Descent Algorithm for finding the minimum of a function of two variables.
-# The user enters the initial points, parameters and the function they would like to examine.
-# The algorithm calculates the derivatives and slope of the function, updating the points at each step.
+# The code implements the Steepest Descent Algorithm for finding the minimum of a function of two variables
+# The user enters the initial points, parameters and the function they would like to examine
+# The algorithm calculates the derivatives and slope of the function, updating the points at each step
 # The process is terminated:
-# 1) when one of the termination criteria is met (before the maximum number of iterations is exceeded) and thus the results and graphs (in three-dimensional and two-dimensional form) showing the progress of the algorithm are displayed
+# 1) when one of the termination criteria is satisfied (before the maximum number of iterations is exceeded) and thus the results and graphs (in three-dimensional and two-dimensional form) showing the progress of the algorithm are displayed
 # 2) when the maximum number of iterations is exceeded, informing the user that the number of iterations has been exceeded without displaying the graphs
 
 # The libraries used to execute the algorithm
@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt # Used to create graphs and visualize results
 
 # Using the Initial_Point() function to input the initial points (x0,y0) from the user
 def Initial_Point(): # The function Initial_Point()
-    while True: # If the user enters a non-numeric value, the user is prompted to enter the point again, informing the user with a corresponding message.
+    while True: # If the user enters a non-numeric value, the user is prompted to enter the point again, informing the user with a corresponding message
         try: # It will appear on the screen if the user enters a numeric value.
             print("Starting Points & Learning Rate:") # The message initially appears on the user's screen
             x0 = float(input("x0 is the initial point. Please enter x0: ")) # User input of point x0
@@ -24,7 +24,7 @@ def Initial_Point(): # The function Initial_Point()
 
 # Using the Parameters() function to input a (learning rate) and the constants c1,c2,c3 that terminate the algorithm
 def Parameters(): # The function Parameters()
-    while True: # If the user enters a value that is not numeric, the corresponding parameter is requested again, informing the user with a corresponding message.
+    while True: # If the user enters a value that is not numeric, the corresponding parameter is requested again, informing the user with a corresponding message
         try: # It will appear on the screen in case the user enters a correct input (numeric value)
             a = float(input("a is learning rate. Please enter a: ")) # Input of the learning rate (how fast the method progresses towards the minimum) by the user
             print("-------------------------------------------------------------------------------------")
@@ -159,23 +159,23 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
         x0 = x0 - a * slope_x
         y0 = y0 - a * slope_y
 
-        x_path.append(x0) # Προσθήκη (append) της τρέχουσα τιμής του x, δηλαδή κάθε φορά του x0, στην λίστα x_path, ώστε η λίστα αυτή να περιέχει όλα τα σημεία x που επισκέπτεται ο αλγόριθμος σε όλη την διαδικασία
-        # Έτσι, η λίστα προβάλλει τα σημεία που έχει περάσει το x καθώς πλησιάζει στο βέλτιστο
-        y_path.append(y0) # Προσθήκη (append) της τρέχουσα τιμής του y, δηλαδή κάθε φορά του y0, στην λίστα y_path, ώστε η λίστα αυτή να περιέχει όλα τα σημεία y που επισκέπτεται ο αλγόριθμος σε όλη την διαδικασία
-        # Έτσι, η λίστα προβάλλει τα σημεία που έχει περάσει το y καθώς πλησιάζει στο βέλτιστο
-        z_path.append(f_num(x0, y0)) # Προσθήκη (append) των τιμών της συνάρτησης σε κάθε (τρέχον) σημείο (x0, y0) στην λίστα z_path
-        # Με αυτό τον τρόπο, γνωρίζουμε πώς αλλάζει η τιμή της συνάρτησης καθώς πλησιάζουμε προς το βέλτιστο κατά την διάρκεια των επαναλήψεων του αλγορίθμου
+        x_path.append(x0) # Append the current value of x, i.e. each time x0, to the list x_path, so that this list contains all the points x visited by the algorithm throughout the process
+        # So, the list displays the points that x has passed as it approaches the optimum
+        y_path.append(y0) # Append the current value of y, i.e. each time y0, to the y_path list, so that this list contains all the y points visited by the algorithm throughout the process
+        # So, the list displays the points that y has passed as it approaches the optimum
+        z_path.append(f_num(x0, y0)) # Append the function values ​​to each (current) point (x0, y0) in the z_path list
+        # In this way, we know how the value of the function changes as we approach the optimum during the iterations of the algorithm.
 
-        # Μετάβαση στον επόμενο κύκλο επανάληψης της διαδικασίας για τον έλεγχο επόμενων σημείων
+        # Go to the next cycle of repeating the process to check the next points
         tries += 1
 
-    # Σε περίπτωση που ο αλγόριθμος δεν καταφέρει να συγκλίνει σε κάποιο βέλτιστο σημείο μέσα στον καθορισμένο αριθμό επαναλήψεων, τότε υπάρχει αποτυχία
-    if tries > MAX_TRIES: # Αν η διαδικασία για την εύρεση του ελαχίστου ξεπεράσει τις 1000 επαναλήψεις...
-        criterion = f"Η αναζήτηση απέτυχε: μέγιστες επαναλήψεις ({MAX_TRIES})." # ...ενημερώνει τον χρήστη για τον λόγο που ο αλγόριθμος απέτυχε να βρει το βέλτιστο
-        return x0, y0, None, criterion, False, x_path, y_path, z_path, tries # Επιστροφή των συγκεκριμένων σημείων, παραμέτρων, κριτηρίου και αριθμού επαναλήψεων
+    # If the algorithm fails to converge to an optimal point within the specified number of iterations, then there is a failure
+    if tries > MAX_TRIES: # If the process of finding the minimum exceeds 1000 iterations...
+        criterion = f"Search failed: maximum retries ({MAX_TRIES})." # ...informs the user about the reason the algorithm failed to find the optimum
+        return x0, y0, None, criterion, False, x_path, y_path, z_path, tries # Return the specified points, parameters, criterion and number of iterations
 
-    # Αν η εκτέλεση επιτευχθεί, τότε επιστρέφονται τα εξής:
-    # Οι τελικές τιμές των παραμέτρων, η τελική τιμή της συνάρτησης, ένα μήνυμα επιτυχίας & η κατάσταση επιτυχίας (True), η πορεία των τιμών x, y, f(x,y) και το συνολικό πλήθος επαναλήψεων
+    # If the execution is successful, then the following is returned:
+    # The final values ​​of the parameters, the final value of the function, a success message & success status (True), the path of the values ​​x, y, f(x,y) and the total number of iterations
     return x0, y0, f_num(x0, y0), criterion, True, x_path, y_path, z_path, tries
 
 # Χρήση της κύριας συνάρτησης main(), η οποία εκτελεί όλο το πρόγραμμα. Είναι υπέυθυνη για την εκτέλεση του βασικού προγράμματος
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
