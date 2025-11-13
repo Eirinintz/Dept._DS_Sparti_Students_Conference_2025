@@ -143,19 +143,19 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
             # The value of the function at the current point is stored in the variable f_current
 
 
-            # Κριτήριο 3 -> Σύγκλιση της διαφοράς τιμών της συνάρτησης. Ελέγχει αν η απόλυτη διαφορά μεταξύ των τιμών μιας συνάρτησης σε δύο διαδοχικά σημεία είναι μικρότερη από την σταθερά c3:
-            # Αν είναι, τότε η συνάρτηση έχει συγκλίνει και καταγράφεται το κριτήριο σύγκλισης
-            if abs(f_current - f_prev) < c3: # abs(): Συνάρτηση απόλυτης τιμής
-            # Εδώ, υπολογίζεται η απόλυτη διαφορά μεταξύ των τιμών της συνάρτησης σε δύο διαδοχικά σημεία
-            # Αν η διαφορά αυτή είναι μικρότερη από την σταθερά c3, τότε δεν αλλάζει πολύ από το ένα σημείο στο άλλο
-            # Αυτό σημαίνει πως η διαδικασία της βελτιστοποίησης πλησιάζει στο επιθυμητό αποτέλεσμα
-                criterion = "3ο κριτήριο: Η σύγκλιση της συνάρτησης είναι μικρή." # Αν η παραπάνω συνθήκη είναι αληθής, τότε η τιμή "3ο κριτήριο: Η σύγκλιση της συνάρτησης είναι μικρή.", ανατίθεται στην μεταβλητή criterion
-                break # Αν ισχύουν τα παραπάνω, τότε σταματά η εκτέλεση του βρόχου και η διαδικασία ολοκληρώνεται
-                # Διακόπτεται η διαδικασία επειδή δεν υπάρχουν ουσιαστικές αλλαγές στις τιμές της συνάρτησης
-            # Αυτό σημαίνει πως η διαδικασία έχει ολοκληρωθεί αφού οι τιμές της συνάρτησης δεν αλλάζουν σημαντικά πια
-            # Έτσι, η συνάρτηση πλησιάζει στο σημείο ελαχίστου
+            # Criterion 3 -> Convergence of the difference of function values. Checks whether the absolute difference between the values ​​of a function at two consecutive points is less than the constant c3:
+            # If it is, then the function has converged and the convergence criterion is recorded
+            if abs(f_current - f_prev) < c3: # abs(): Absolute value function
+            # Here, the absolute difference between the values ​​of the function at two consecutive points is calculated
+            # If this difference is less than the constant c3, then it does not change much from one point to another
+            # This means that the optimization process is approaching the desired result
+                criterion = "3rd criterion: The convergence of the function is small." # If the above condition is true, then the value "3rd criterion: The convergence of the function is small.", is assigned to the variable criterion
+                break # If the above is true, then the loop execution stops and the process is completed
+                # The process is stopped because there are no significant changes in the function values
+            # This means that the process is complete since the function values ​​no longer change significantly
+            # Thus, the function approaches the minimum point
 
-        # Ενημέρωση μεταβλητών x0 και y0. Οι τιμές ενημερώνονται με βάση την κλίση και τον ρυθμό εκμάθησης (όπως αποδεικνύουν οι επόμενες πράξεις)
+        # Update variables x0 and y0. The values ​​are updated based on the slope and learning rate (as demonstrated in the following operations)
         x0 = x0 - a * slope_x
         y0 = y0 - a * slope_y
 
@@ -274,6 +274,7 @@ def main(): # Η συνάρτηση main()
 # Ολοκλήρωση της main
 
 main()
+
 
 
 
