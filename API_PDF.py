@@ -41,7 +41,8 @@ output_message = completion.choices[0].message.content
 with open("output.txt", "w", encoding="utf-8") as output_file:
     output_file.write(output_message)
 
-print("Οι ερωτήσεις αποθηκεύτηκαν στο αρχείο 'output.txt'")
+print("The questions were saved to the file 'output.txt'")
+
 
 
 
