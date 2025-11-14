@@ -1,4 +1,4 @@
-## Depatment of Digital Systems in Sparta, Fist Student Conference 2025
+## Depatment of Digital Systems in Sparta, First Student Conference 2025
 
 ### *Welcome* to Dept._DS_Sparti_Students_Conference_2025 📜🎓
 
