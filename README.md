@@ -38,6 +38,7 @@ In the **third** code, the following happens: ✅
 - The process continues until one of the termination criteria is met or the maximum number of iterations is exceeded.
 - Finally, it displays the results, namely the minimum point, the corresponding value of the function, which termination criterion was satisfied and the number of iterations, while creating 3D surface and 2D contour plots that show the path of the algorithm towards the minimum point.
 
+---
 
 Tools used: 🧠📚
 
