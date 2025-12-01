@@ -84,7 +84,7 @@ def steepest_descent(f_num, x0, y0, a, c1, c2, c3, derivative_x, derivative_y): 
 
     grad_norm = sp.sqrt(slope_x**2 + slope_y**2) # The degree measure is calculated, which shows how quickly the function changes at the point we are examining
     # grad_norm: Calculating the norm of the gradient vector (gradient norm)
-    # If it is zero, it means that the function is already at a local minimum or maximum.
+    # If it is zero, it means that the function is already at a local minimum or maximum
     # sp.sqrt: Calculating the square root of the sum of the squares of the derivatives
 
     slope_x_expr = derivative_x # The value of the partial derivative with respect to x is assigned to the variable slope_x_expr
@@ -274,3 +274,4 @@ def main(): # The function main()
 # Completion of main
 
 main()
+
