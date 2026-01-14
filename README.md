@@ -7,7 +7,7 @@
 
 ---
 
-📂 There are three different code files in this repository:
+📂 There are *three* different code files in this repository:
 
 1️⃣ **API_Conf_DS_2025.py** 🧾
 ➡️ Uses a TXT file as input prompt
