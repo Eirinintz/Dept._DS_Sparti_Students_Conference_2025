@@ -9,13 +9,13 @@
 
 📂 There are three different code files in this repository:
 
-1️⃣ API_Conf_DS_2025.py 🧾
+1️⃣ **API_Conf_DS_2025.py** 🧾
 ➡️ Uses a TXT file as input prompt
 
-2️⃣ API_PDF.py 📄
+2️⃣ **API_PDF.py** 📄
 ➡️ Uses a PDF file as input prompt
 
-3️⃣ Steepest_Descent.py 📐
+3️⃣ **Steepest_Descent.py** 📐
 ➡️ Explains the Steepest Descent Method in detail, including extensive comments for better understanding
 
 ---
