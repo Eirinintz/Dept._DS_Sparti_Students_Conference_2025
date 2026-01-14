@@ -69,8 +69,8 @@
 
 ### 🛠️ Tools used: 🧠📚
 
-- *ChatGPT* AI tool 🤖 was used for development assistance, explanations, and code support 💻✨
+- *ChatGPT* AI tool 🤖 was used for development assistance, explanations, and code support. 💻✨
 
-- During development, AI tools such as *ChatGPT* 🤖 and *Co-pilot* 💡 were utilized to provide guidance and programming support 🛠️💻
+- During development, AI tools such as *ChatGPT* 🤖 and *Co-pilot* 💡 were utilized to provide guidance and programming support. 🛠️💻
 
-- The implementation was supported by AI tools including *ChatGPT* 🤖, *Co-pilot* 🧑‍✈️, and *DeepSeek* 🔍🧠, which were used for analysis, problem-solving, and code improvement 🚀✨
+- The implementation was supported by AI tools including *ChatGPT* 🤖, *Co-pilot* 🧑‍✈️, and *DeepSeek* 🔍🧠, which were used for analysis, problem-solving, and code improvement. 🚀✨
