@@ -2,8 +2,8 @@
 
 ### *Welcome* to Dept._DS_Sparti_Students_Conference_2025 📜🎓
 
-📌 This project was developed as part of my undergraduate thesis 🎓 at the University of Peloponnese 🏛️.
-🎤 It was presented at the First Student Conference 2025, held in Sparta 📍, on 14/03/2025 📅.
+📌 This project was developed as part of my undergraduate thesis 🎓 at the *University of Peloponnese* 🏛️.
+🎤 It was presented at the ***First Student Conference 2025***, held in **Sparta** 📍, on **14/03/2025** 📅.
 
 ---
 
