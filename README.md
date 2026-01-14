@@ -20,7 +20,7 @@
 
 ---
 
-In the **first** code, the following happens: ✅
+### In the **first** code, the following happens: ✅
 
 - 📦 The code first imports the OpenAI library and creates a client object that connects to the OpenAI API, using the API key provided by the user. 🔑🤖
 
@@ -64,3 +64,9 @@ In the **third** code, the following happens: ✅
 - ⏱️ The process continues until one of the stopping criteria is met or the maximum number of iterations is reached.
 
 - 📊📈 Finally, the program displays the results, including the minimum point, the corresponding function value, the termination criterion that was satisfied, and the total number of iterations. Additionally, it generates 3D surface plots and 2D contour plots that visually illustrate the path of the algorithm toward the minimum point. 🎯✨
+
+---
+
+🛠️ Tool used: 🧠📚
+
+ChatGPT AI tool 🤖 — used for assistance, explanations, and code support 💻✨
