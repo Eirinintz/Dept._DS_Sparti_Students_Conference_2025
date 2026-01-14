@@ -7,7 +7,7 @@
 
 ---
 
-📂 There are *three* different code files in this repository:
+### 📂 There are *three* different code files in this repository:
 
 1️⃣ **API_Conf_DS_2025.py** 🧾
 ➡️ Uses a TXT file as input prompt
@@ -20,7 +20,7 @@
 
 ---
 
-### In the **first** code, the following happens: ✅
+### In the first code, the following happens: ✅
 
 - 📦 The code first imports the OpenAI library and creates a client object that connects to the OpenAI API, using the API key provided by the user. 🔑🤖
 
@@ -34,7 +34,7 @@
 
 ---
 
-In the **second** code, the following happens: ✅
+### In the second code, the following happens: ✅
 
 - 📄 The code reads the contents of a PDF file named document.pdf, extracting all its text using the PyPDF2 library. If the file is not found, ❌ an error message is displayed and the program terminates. ⚠️
 
@@ -49,7 +49,7 @@ In the **second** code, the following happens: ✅
 
 ---
 
-In the **third** code, the following happens: ✅
+### In the third code, the following happens: ✅
 
 - 📐 The code implements the Steepest Descent algorithm to find the local minimum of a function of two variables. It first asks the user to provide the initial point (x₀, y₀), the function to minimize, the learning rate, and the termination constants c1, c2, c3. These constants determine when the algorithm stops:
   
@@ -67,6 +67,10 @@ In the **third** code, the following happens: ✅
 
 ---
 
-🛠️ Tool used: 🧠📚
+### 🛠️ Tool used: 🧠📚
 
 ChatGPT AI tool 🤖 — used for assistance, explanations, and code support 💻✨
+
+co pilot
+
+kineziko 
