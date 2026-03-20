@@ -38,7 +38,7 @@
 
 - 📄 The code reads the contents of a PDF file named document.pdf, extracting all its text using the PyPDF2 library. If the file is not found, ❌ an error message is displayed and the program terminates. ⚠️
 
-- 🧠 It then creates a prompt that asks OpenAI’s gpt-4o-mini model to generate 10 multiple-choice questions in Greek 🇬🇷, based on the text extracted from the PDF. The questions focus on Artificial Intelligence and Steepest Descent, include 5 possible answers (with one correct answer ✅), and are categorized by difficulty level using a Likert scale from 1 to 5 📊
+- 🧠 It then creates a prompt that asks OpenAI’s gpt-4o-mini model to generate 10 multiple-choice questions in Greek, based on the text extracted from the PDF. The questions focus on Artificial Intelligence and Steepest Descent, include 5 possible answers (with one correct answer ✅), and are categorized by difficulty level using a Likert scale from 1 to 5 📊
 (1 = very easy, 5 = very difficult, with a predefined distribution across levels).
 
 - 📤 The program sends this prompt to the OpenAI API via a client object created using the user’s API key 🔑🤖. The model processes the input and generates the requested questions. ✨
