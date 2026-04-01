@@ -4,6 +4,8 @@
 
 📌 This project was developed as part of my undergraduate thesis 🎓 at the *University of Peloponnese* 🏛️.
 🎤 It was presented at the ***First Student Conference 2025***, held in **Sparta** 📍, on **14/03/2025** 📅.
+Its aim was to bridge theoretical mathematical concepts with modern artificial intelligence technologies 
+through the practical implementation of the Steepest Descent algorithm.
 
 ---
 
